@@ -1061,37 +1061,8 @@ app.get('/api/admin/users', requireAuth, requireRole('admin'), (req, res) => {
   res.json({ users });
 });
 
+// ОНОВЛЕННЯ користувача (PATCH)
 app.patch('/api/admin/users/:id', requireAuth, requireRole('admin'), (req, res) => {
-  const db = req.database;
-  const userId = req.params.id;
-  
-  // Знаходимо користувача
-  const user = db.users.find(u => u.id === userId);
-  
-  if (!user) {
-    return res.status(404).json({ message: 'Користувача не знайдено.' });
-  }
-  
-  // Не дозволяємо видалити самого себе
-  if (user.id === req.currentUser.id) {
-    return res.status(400).json({ message: 'Не можна видалити власний обліковий запис.' });
-  }
-  
-  // Видаляємо користувача
-  db.users = db.users.filter(u => u.id !== userId);
-  
-  // Також видаляємо всі checkins користувача
-  db.checkins = db.checkins.filter(c => c.userId !== userId);
-  
-  // Видаляємо всі результати тестів користувача
-  db.testResults = db.testResults.filter(r => r.userId !== userId);
-  
-  writeDatabase(db);
-  
-  res.json({ 
-    message: `Користувача "${user.fullName}" видалено разом з усіма його даними.`,
-    deletedUser: { id: user.id, fullName: user.fullName, email: user.email }
-  });
   const user = req.database.users.find((item) => item.id === req.params.id);
   if (!user) {
     return res.status(404).json({ message: 'Користувача не знайдено.' });
@@ -1114,6 +1085,33 @@ app.patch('/api/admin/users/:id', requireAuth, requireRole('admin'), (req, res) 
 
   writeDatabase(req.database);
   res.json({ message: 'Профіль користувача оновлено.', user: sanitizeUser(user) });
+});
+
+// ВИДАЛЕННЯ користувача (DELETE) - ЦЕ ОКРЕМИЙ МАРШРУТ!
+app.delete('/api/admin/users/:id', requireAuth, requireRole('admin'), (req, res) => {
+  const db = req.database;
+  const userId = req.params.id;
+  
+  const user = db.users.find(u => u.id === userId);
+  
+  if (!user) {
+    return res.status(404).json({ message: 'Користувача не знайдено.' });
+  }
+  
+  if (user.id === req.currentUser.id) {
+    return res.status(400).json({ message: 'Не можна видалити власний обліковий запис.' });
+  }
+  
+  db.users = db.users.filter(u => u.id !== userId);
+  db.checkins = db.checkins.filter(c => c.userId !== userId);
+  db.testResults = db.testResults.filter(r => r.userId !== userId);
+  
+  writeDatabase(db);
+  
+  res.json({ 
+    message: `Користувача "${user.fullName}" видалено разом з усіма його даними.`,
+    deletedUser: { id: user.id, fullName: user.fullName, email: user.email }
+  });
 });
 
 app.get('/api/admin/system', requireAuth, requireRole('admin'), (req, res) => {
