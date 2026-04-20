@@ -979,7 +979,14 @@ function renderUsersTab() {
                     <span class="small-note">Записів: ${escapeHtml(user.checkins)}<br />Результатів: ${escapeHtml(user.results)}</span>
                   </td>
                   <td>
-                    ${user.id === state.user.id ? '<span class="pill neutral">Поточний обліковий запис</span>' : `<button class="btn primary" data-action="save-user" data-user-id="${user.id}">Зберегти</button>`}
+                    ${user.id === state.user.id 
+  ? '<span class="pill neutral">Поточний обліковий запис</span>' 
+  : `
+    <div class="inline-actions" style="gap: 8px;">
+      <button class="btn primary" data-action="save-user" data-user-id="${user.id}">Зберегти</button>
+      <button class="btn danger" data-action="delete-user" data-user-id="${user.id}">🗑️ Видалити</button>
+    </div>
+  `}
                   </td>
                 </tr>
               `
@@ -1433,7 +1440,18 @@ async function handleSaveUser(userId) {
   });
   await refreshData('Профіль користувача оновлено.');
 }
-
+async function handleDeleteUser(userId) {
+  // Отримуємо ім'я користувача для підтвердження
+  const userRow = document.querySelector(`[data-user-row="${userId}"]`);
+  const userName = userRow?.querySelector('strong')?.textContent || 'цього користувача';
+  
+  if (!window.confirm(`Ви впевнені, що хочете видалити ${userName}?\n\nВсі його checkins та результати тестів будуть безповоротно втрачені!`)) {
+    return;
+  }
+  
+  await apiRequest(`/api/admin/users/${userId}`, { method: 'DELETE' });
+  await refreshData('Користувача видалено.');
+}
 async function handleLogout() {
   await apiRequest('/api/logout', { method: 'POST' });
   window.location.href = '/auth';
@@ -1473,6 +1491,9 @@ workspaceContent.addEventListener('click', async (event) => {
     if (action === 'save-user') {
       await handleSaveUser(trigger.dataset.userId);
     }
+    if (action === 'delete-user') {
+  await handleDeleteUser(trigger.dataset.userId);
+}
     if (action === 'reset-results-filter') {
       state.filters.resultsQuery = '';
       renderActiveTab();
