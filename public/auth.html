@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusPulse — Вхід та реєстрація</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="auth-layout">
+    <section class="auth-showcase surface reveal">
+      <a class="brand" href="/">
+        <span class="brand-logo brand-logo-image-wrap">
+  <img src="/images/college-logo.jpg" alt="Емблема коледжу" class="brand-logo-image" />
+</span>
+        <span>
+          <strong>CampusPulse</strong>
+          <small>Кабінет користувача</small>
+        </span>
+      </a>
+
+      <div class="showcase-copy">
+        <span class="eyebrow">Робочий простір для студентів, викладачів і адміністраторів</span>
+        <h1>Увійдіть в систему або створіть новий обліковий запис</h1>
+        <p>
+          Після входу система відкриє інтерфейс відповідно до ролі: персональний кабінет студента,
+          конструктор тестів для викладача або панель адміністрування.
+        </p>
+      </div>
+
+      <div class="auth-benefits">
+        <div class="benefit-card surface soft-card">
+          <strong>Студент</strong>
+          <span>Щоденник стану, тести та власні результати</span>
+        </div>
+        <div class="benefit-card surface soft-card">
+          <strong>Викладач</strong>
+          <span>Створення тестів і перегляд результатів усіх студентів</span>
+        </div>
+        <div class="benefit-card surface soft-card">
+          <strong>Адмін</strong>
+          <span>Керування ролями, статусами та системною статистикою</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel surface reveal-delay">
+      <div class="auth-toggle">
+        <button class="toggle-btn active" data-target="login-card">Вхід</button>
+        <button class="toggle-btn" data-target="register-card">Реєстрація</button>
+      </div>
+
+      <div id="toast" class="toast hidden"></div>
+
+      <div id="login-card" class="auth-card active">
+        <h2>Вхід у систему</h2>
+        <p>Введіть email та пароль, щоб перейти до свого робочого кабінету.</p>
+        <form id="login-form" class="form-grid">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="name@example.com" required />
+          </label>
+          <label>
+            <span>Пароль</span>
+            <input type="password" name="password" placeholder="••••••••" required />
+          </label>
+          <button class="btn primary large full" type="submit">Увійти</button>
+        </form>
+      </div>
+
+      <div id="register-card" class="auth-card">
+        <h2>Створення профілю</h2>
+        <form id="register-form" class="form-grid">
+          <label>
+            <span>ПІБ</span>
+            <input type="text" name="fullName" placeholder="Ім'я Прізвище" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="name@example.com" required />
+          </label>
+          <label>
+            <span>Пароль</span>
+            <input type="password" name="password" placeholder="Мінімум 6 символів" required />
+          </label>
+          <input type="hidden" id="role-field" name="role" value="student" />
+
+<div class="info-note">
+  Нові облікові записи створюються як студентські. Роль викладача надається адміністратором.
+</div>
+          <label>
+            <span id="faculty-label">Факультет / спеціальність</span>
+            <input type="text" name="faculty" placeholder="Комп'ютерні науки" required />
+          </label>
+          <label>
+            <span id="studyyear-label">Курс</span>
+            <input type="text" name="studyYear" placeholder="3 курс" required />
+          </label>
+          <button class="btn primary large full" type="submit">Створити профіль</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,956 @@
+{
+  "meta": {
+    "version": 2,
+    "title": "CampusPulse",
+    "updatedAt": "2026-04-19T06:38:29.211Z"
+  },
+  "users": [
+    {
+      "id": "usr-admin-default",
+      "fullName": "Системний адміністратор",
+      "email": "admin@campuspulse.local",
+      "salt": "67ffeec343ea3d6e3eb5e84185cb4e06",
+      "passwordHash": "58b9a7119570cb2c67bddb7a4c991446737c177e527af1916a79c8d2d4758e0d96c830a532c8dad6f505a495aea5751fbf4d9755b2e8d96c0383bd519e097557",
+      "faculty": "Центральне адміністрування",
+      "studyYear": "Адміністратор",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-03-18T08:35:55.358Z",
+      "lastLoginAt": "2026-04-02T08:52:28.007Z"
+    },
+    {
+      "id": "usr-teacher-default",
+      "fullName": "Марія Коваль",
+      "email": "teacher@campuspulse.local",
+      "salt": "9f29c5f250505f00481386f6845ed433",
+      "passwordHash": "13abdb818b07695d5e7e382d1aa930eefbe648c369c8e0ca306db0c357e0f5ac4d97ff171312003e2e105d92278e5afe8108558a1924f0214f9bb19023957952",
+      "faculty": "Кафедра психології та педагогіки",
+      "studyYear": "Викладач",
+      "role": "teacher",
+      "status": "active",
+      "createdAt": "2026-03-18T08:35:55.389Z",
+      "lastLoginAt": "2026-04-02T08:08:19.845Z"
+    },
+    {
+      "id": "usr-student-default",
+      "fullName": "Олена Іваненко",
+      "email": "student@campuspulse.local",
+      "salt": "548f11479e395b3e3afab678cd0ec31a",
+      "passwordHash": "84b67c05d1877f6d0589682fb5cb34fd8cf9059ed2be23b2d4a21f5b06ff0dc3519a876d1845c821816fd27170603bcce437a9c361265919329c289e2205e300",
+      "faculty": "Компʼютерні науки",
+      "studyYear": "3 курс",
+      "role": "student",
+      "status": "active",
+      "createdAt": "2026-03-18T08:35:55.420Z",
+      "lastLoginAt": "2026-04-19T06:38:28.530Z"
+    },
+    {
+      "id": "usr-1774004495036-ltjr24",
+      "fullName": "цйув йв йцв",
+      "email": "zavalniuk2007@gmail.com",
+      "salt": "7852c9ef17b45261fc53e0d443d2c45d",
+      "passwordHash": "55a0e20caf7ac2c9152854c56c6afb61545bf313ebc6b202dc791390da05ef09fcf5ea4e3b0fe2950604e77cb6cdb6bb44d7659066a78e45bc007985b5fb6da3",
+      "faculty": "фцуфц",
+      "studyYear": "фівфів",
+      "role": "teacher",
+      "status": "active",
+      "createdAt": "2026-03-20T11:01:35.036Z",
+      "lastLoginAt": null
+    },
+    {
+      "id": "usr-1775116257242-x82m5w",
+      "fullName": "Назар Завальнюк",
+      "email": "123456@campuspulse.local",
+      "salt": "cbade181357e646b2a15584a6a9fc2d9",
+      "passwordHash": "803ccbfd2ad6600186701e15c2e911a116f6f785830508364560fc66041f54187108fb2f475fbef67c9d8becfbe129ce3960df8414c884904320cb7aa5c7d1ed",
+      "faculty": "йцйуцйуц",
+      "studyYear": "цйцуйцу",
+      "role": "teacher",
+      "status": "active",
+      "createdAt": "2026-04-02T07:50:57.242Z",
+      "lastLoginAt": null
+    },
+    {
+      "id": "usr-1775119862270-moc7tc",
+      "fullName": "Завальнюк Назар",
+      "email": "student1@campuspulse.local",
+      "salt": "2351e079dd020b143f24c3026491a7ca",
+      "passwordHash": "1b9325e717d00863972c61e9349bf0bc0891f46fbc7e0e6cb9aad152209f769217059684ae18049d16dfbe370adb8249ff9fe5d9c452243ffa4fc0914c8ca2e6",
+      "faculty": "122 Комп'ютерні науки",
+      "studyYear": "4",
+      "role": "teacher",
+      "status": "active",
+      "createdAt": "2026-04-02T08:51:02.270Z",
+      "lastLoginAt": "2026-04-02T10:22:36.367Z"
+    }
+  ],
+  "checkins": [
+    {
+      "id": "chk-1775118998124-evaf7r",
+      "userId": "usr-student-default",
+      "mood": 7,
+      "stress": 4,
+      "energy": 7,
+      "sleepHours": 7.5,
+      "workload": 6,
+      "note": "Стабільний день, встигла завершити лабораторну.",
+      "tags": [
+        "лабораторна",
+        "ритм"
+      ],
+      "date": "2026-03-11",
+      "createdAt": "2026-03-11T09:00:00.000Z"
+    },
+    {
+      "id": "chk-1775118998124-ged7ti",
+      "userId": "usr-student-default",
+      "mood": 6,
+      "stress": 6,
+      "energy": 5,
+      "sleepHours": 6.4,
+      "workload": 8,
+      "note": "Щільний графік, багато дедлайнів.",
+      "tags": [
+        "дедлайн"
+      ],
+      "date": "2026-03-12",
+      "createdAt": "2026-03-12T09:00:00.000Z"
+    },
+    {
+      "id": "chk-1775118998124-1ccu3l",
+      "userId": "usr-student-default",
+      "mood": 8,
+      "stress": 4,
+      "energy": 8,
+      "sleepHours": 7.9,
+      "workload": 5,
+      "note": "Після вихідного стало легше зосереджуватися.",
+      "tags": [
+        "відновлення"
+      ],
+      "date": "2026-03-13",
+      "createdAt": "2026-03-13T09:00:00.000Z"
+    },
+    {
+      "id": "chk-1775118998124-555dia",
+      "userId": "usr-student-default",
+      "mood": 7,
+      "stress": 5,
+      "energy": 6,
+      "sleepHours": 7.1,
+      "workload": 7,
+      "note": "Нормальний темп, але потрібні короткі паузи.",
+      "tags": [
+        "паузи"
+      ],
+      "date": "2026-03-14",
+      "createdAt": "2026-03-14T09:00:00.000Z"
+    },
+    {
+      "id": "chk-1775118998124-ymf3hx",
+      "userId": "usr-student-default",
+      "mood": 8,
+      "stress": 3,
+      "energy": 8,
+      "sleepHours": 8,
+      "workload": 5,
+      "note": "Добре тримався фокус і настрій.",
+      "tags": [
+        "фокус",
+        "сон"
+      ],
+      "date": "2026-03-15",
+      "createdAt": "2026-03-15T09:00:00.000Z"
+    },
+    {
+      "id": "chk-1775119833652-wvuwq5",
+      "userId": "usr-student-default",
+      "mood": 10,
+      "stress": 10,
+      "energy": 1,
+      "sleepHours": 2,
+      "workload": 10,
+      "note": "",
+      "tags": [],
+      "date": "2026-04-02",
+      "createdAt": "2026-04-02T08:50:33.652Z"
+    },
+    {
+      "id": "chk-1775119879028-pzx893",
+      "userId": "usr-1775119862270-moc7tc",
+      "mood": 10,
+      "stress": 3,
+      "energy": 8,
+      "sleepHours": 9,
+      "workload": 4,
+      "note": "",
+      "tags": [],
+      "date": "2026-04-02",
+      "createdAt": "2026-04-02T08:51:19.028Z"
+    },
+    {
+      "id": "chk-1775119899042-scqqt7",
+      "userId": "usr-1775119862270-moc7tc",
+      "mood": 9,
+      "stress": 3,
+      "energy": 3,
+      "sleepHours": 7,
+      "workload": 3,
+      "note": "",
+      "tags": [],
+      "date": "2026-04-02",
+      "createdAt": "2026-04-02T08:51:39.042Z"
+    },
+    {
+      "id": "chk-1775125344819-0mdjtm",
+      "userId": "usr-student-default",
+      "mood": 8,
+      "stress": 3,
+      "energy": 6,
+      "sleepHours": 8,
+      "workload": 8,
+      "note": "",
+      "tags": [],
+      "date": "2026-04-02",
+      "createdAt": "2026-04-02T10:22:24.819Z"
+    }
+  ],
+  "resources": [
+    {
+      "id": "res-breath",
+      "title": "Дихальна техніка 4-6",
+      "type": "Відновлення",
+      "description": "6 циклів спокійного дихання перед навчальним блоком допомагають знизити напруження та стабілізувати увагу."
+    },
+    {
+      "id": "res-focus",
+      "title": "Правило 50/10 для концентрації",
+      "type": "Фокус",
+      "description": "50 хвилин цілеспрямованої роботи і 10 хвилин короткого відпочинку допомагають підтримувати стабільну продуктивність."
+    },
+    {
+      "id": "res-sleep",
+      "title": "Базовий чеклист сну",
+      "type": "Сон",
+      "description": "Стабільний час відходу до сну, провітрювання кімнати та відмова від яскравих екранів за 40 хвилин до сну."
+    },
+    {
+      "id": "res-balance",
+      "title": "Мікропауза між парами",
+      "type": "Баланс",
+      "description": "Вода, коротка хода і одна хвилина тиші допомагають перейти між навчальними навантаженнями без перевтоми."
+    }
+  ],
+  "tests": [
+    {
+      "id": "test-resource-default",
+      "title": "Тест емоційного ресурсу",
+      "description": "Коротка оцінка внутрішнього ресурсу, здатності відновлюватися та зберігати мотивацію під час навчання.",
+      "category": "Ресурс",
+      "mode": "resource",
+      "durationMinutes": 5,
+      "status": "active",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "questions": [
+        {
+          "id": "q-er-1",
+          "text": "Я відчуваю достатньо сил для виконання щоденних навчальних завдань."
+        },
+        {
+          "id": "q-er-2",
+          "text": "Після відпочинку я швидко повертаюся до продуктивного стану."
+        },
+        {
+          "id": "q-er-3",
+          "text": "Мені легко зберігати інтерес до навчання протягом тижня."
+        },
+        {
+          "id": "q-er-4",
+          "text": "Я відчуваю, що контролюю свій темп навчання."
+        },
+        {
+          "id": "q-er-5",
+          "text": "Після складного дня я можу досить швидко відновитися."
+        }
+      ],
+      "createdAt": "2026-03-16T08:00:00.000Z"
+    },
+    {
+      "id": "test-load-default",
+      "title": "Шкала навчального перевантаження",
+      "description": "Оцінка субʼєктивного навантаження, втоми та ризику виснаження через інтенсивний навчальний ритм.",
+      "category": "Навантаження",
+      "mode": "risk",
+      "durationMinutes": 6,
+      "status": "active",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "questions": [
+        {
+          "id": "q-wl-1",
+          "text": "Останнім часом мені важко переключатися з навчання на відпочинок."
+        },
+        {
+          "id": "q-wl-2",
+          "text": "Я часто відчуваю, що навчальних завдань більше, ніж можу якісно виконати."
+        },
+        {
+          "id": "q-wl-3",
+          "text": "Наприкінці дня я відчуваю виснаження навіть без фізичного навантаження."
+        },
+        {
+          "id": "q-wl-4",
+          "text": "Мене турбує накопичення дедлайнів та нерозвʼязаних завдань."
+        },
+        {
+          "id": "q-wl-5",
+          "text": "Через навчання мені важко підтримувати комфортний режим сну й відпочинку."
+        }
+      ],
+      "createdAt": "2026-03-16T09:30:00.000Z"
+    },
+    {
+      "id": "tst-1775124553826-tlr376",
+      "title": "1",
+      "description": "1",
+      "category": "Ресурс",
+      "mode": "resource",
+      "durationMinutes": 5,
+      "status": "active",
+      "createdBy": "usr-1775119862270-moc7tc",
+      "createdByName": "Завальнюк Назар",
+      "answerType": "custom",
+      "questions": [
+        {
+          "id": "q-1775124553826-0ttpni-0",
+          "text": "Який твій настрій сьогодні?",
+          "options": [
+            {
+              "text": "Добрий",
+              "value": 1
+            },
+            {
+              "text": "Нормальний",
+              "value": 2
+            },
+            {
+              "text": "Поганий",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "q-1775124553826-7j3cuk-1",
+          "text": "Як ти оцінюєш навантаження?",
+          "options": [
+            {
+              "text": "Легке",
+              "value": 1
+            },
+            {
+              "text": "Помірне",
+              "value": 2
+            },
+            {
+              "text": "Високе",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "q-1775124553826-69qisd-2",
+          "text": "Чи вистачає тобі часу на відпочинок?",
+          "options": [
+            {
+              "text": "Так",
+              "value": 1
+            },
+            {
+              "text": "Частково",
+              "value": 2
+            },
+            {
+              "text": "Ні",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-04-02T10:09:13.826Z"
+    },
+    {
+      "id": "tst-1775124564273-snlyzv",
+      "title": "2",
+      "description": "2",
+      "category": "Ресурс",
+      "mode": "resource",
+      "durationMinutes": 5,
+      "status": "active",
+      "createdBy": "usr-1775119862270-moc7tc",
+      "createdByName": "Завальнюк Назар",
+      "answerType": "scale",
+      "questions": [
+        {
+          "id": "q-1775124564273-rm8hcj-0",
+          "text": "qwe",
+          "options": []
+        },
+        {
+          "id": "q-1775124564273-llgzd4-1",
+          "text": "qwe",
+          "options": []
+        },
+        {
+          "id": "q-1775124564273-0bukzu-2",
+          "text": "qwe",
+          "options": []
+        }
+      ],
+      "createdAt": "2026-04-02T10:09:24.273Z"
+    },
+    {
+      "id": "tst-1775125019989-dn6bas",
+      "title": "123",
+      "description": "123",
+      "category": "Ресурс",
+      "mode": "resource",
+      "durationMinutes": 5,
+      "status": "active",
+      "createdBy": "usr-1775119862270-moc7tc",
+      "createdByName": "Завальнюк Назар",
+      "answerType": "custom",
+      "questions": [
+        {
+          "id": "q-1775125019989-jswyzh-0",
+          "text": "Який твій настрій сьогодні?",
+          "options": [
+            {
+              "text": "Добрий",
+              "value": 1
+            },
+            {
+              "text": "Нормальний",
+              "value": 2
+            },
+            {
+              "text": "Поганий",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "q-1775125019989-m5ta79-1",
+          "text": "Як ти оцінюєш навантаження?",
+          "options": [
+            {
+              "text": "Легке",
+              "value": 1
+            },
+            {
+              "text": "Помірне",
+              "value": 2
+            },
+            {
+              "text": "Високе",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "q-1775125019989-baikv7-2",
+          "text": "Чи вистачає тобі часу на відпочинок?",
+          "options": [
+            {
+              "text": "Так",
+              "value": 1
+            },
+            {
+              "text": "Частково",
+              "value": 2
+            },
+            {
+              "text": "Ні",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-04-02T10:16:59.989Z"
+    }
+  ],
+  "testResults": [
+    {
+      "id": "res-1773822955421-fbgm9u",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 4
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 4
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 4
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 5
+        }
+      ],
+      "score": 22,
+      "maxScore": 25,
+      "percentage": 88,
+      "level": "Високий ресурс",
+      "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
+      "recommendation": "Зберігай поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
+      "createdAt": "2026-03-15T10:20:00.000Z"
+    },
+    {
+      "id": "res-1773822955421-thmv0w",
+      "testId": "test-load-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-wl-1",
+          "value": 3
+        },
+        {
+          "questionId": "q-wl-2",
+          "value": 4
+        },
+        {
+          "questionId": "q-wl-3",
+          "value": 3
+        },
+        {
+          "questionId": "q-wl-4",
+          "value": 4
+        },
+        {
+          "questionId": "q-wl-5",
+          "value": 2
+        }
+      ],
+      "score": 16,
+      "maxScore": 25,
+      "percentage": 64,
+      "level": "Помірний ризик",
+      "summary": "Є ознаки напруження, але ситуацію ще можна стабілізувати за рахунок ритму роботи та відпочинку.",
+      "recommendation": "Корисно скоротити фонове перевантаження, структурувати дедлайни та відстежити сон протягом найближчого тижня.",
+      "createdAt": "2026-03-15T10:45:00.000Z"
+    },
+    {
+      "id": "res-1773823233648-gkfd3o",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 4
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 3
+        }
+      ],
+      "score": 14,
+      "maxScore": 25,
+      "percentage": 56,
+      "level": "Помірний ресурс",
+      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
+      "recommendation": "Додай регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
+      "createdAt": "2026-03-18T08:40:33.648Z"
+    },
+    {
+      "id": "res-1774003874258-n312ac",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 4
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 2
+        }
+      ],
+      "score": 14,
+      "maxScore": 25,
+      "percentage": 56,
+      "level": "Помірний ресурс",
+      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
+      "recommendation": "Додай регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
+      "createdAt": "2026-03-20T10:51:14.258Z"
+    },
+    {
+      "id": "res-1774257458904-s8iqkq",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 1
+        }
+      ],
+      "score": 5,
+      "maxScore": 25,
+      "percentage": 20,
+      "level": "Низький ресурс",
+      "summary": "Є ознаки виснаження або недостатнього відновлення, що може впливати на навчальну ефективність.",
+      "recommendation": "Варто переглянути навантаження, режим сну та додати стабільні ритуали відновлення протягом тижня.",
+      "createdAt": "2026-03-23T09:17:38.904Z"
+    },
+    {
+      "id": "res-1775117956569-hu5zkd",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 2
+        }
+      ],
+      "score": 8,
+      "maxScore": 25,
+      "percentage": 32,
+      "level": "Низький ресурс",
+      "summary": "Є ознаки виснаження або недостатнього відновлення, що може впливати на навчальну ефективність.",
+      "recommendation": "Варто переглянути навантаження, режим сну та додати стабільні ритуали відновлення протягом тижня.",
+      "createdAt": "2026-04-02T08:19:16.569Z"
+    },
+    {
+      "id": "res-1775118436356-u9adx8",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 1
+        }
+      ],
+      "score": 6,
+      "maxScore": 25,
+      "percentage": 24,
+      "level": "Низький ресурс",
+      "summary": "Є ознаки виснаження або недостатнього відновлення, що може впливати на навчальну ефективність.",
+      "recommendation": "Варто переглянути навантаження, режим сну та додати стабільні ритуали відновлення протягом тижня.",
+      "createdAt": "2026-04-02T08:27:16.356Z"
+    },
+    {
+      "id": "res-1775118447567-eqm92h",
+      "testId": "test-load-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-wl-1",
+          "value": 1
+        },
+        {
+          "questionId": "q-wl-2",
+          "value": 2
+        },
+        {
+          "questionId": "q-wl-3",
+          "value": 1
+        },
+        {
+          "questionId": "q-wl-4",
+          "value": 1
+        },
+        {
+          "questionId": "q-wl-5",
+          "value": 1
+        }
+      ],
+      "score": 6,
+      "maxScore": 25,
+      "percentage": 24,
+      "level": "Низький ризик",
+      "summary": "Ознаки перевантаження не домінують, поточний рівень напруження контрольований.",
+      "recommendation": "Продовжуй підтримувати збалансований режим і проходь тест повторно для контролю динаміки.",
+      "createdAt": "2026-04-02T08:27:27.567Z"
+    },
+    {
+      "id": "res-1775118489164-q62m24",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 5
+        }
+      ],
+      "score": 25,
+      "maxScore": 25,
+      "percentage": 100,
+      "level": "Високий ресурс",
+      "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
+      "recommendation": "Зберігай поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
+      "createdAt": "2026-04-02T08:28:09.164Z"
+    },
+    {
+      "id": "res-1775119920467-4z4nav",
+      "testId": "test-resource-default",
+      "userId": "usr-1775119862270-moc7tc",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 1
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 4
+        }
+      ],
+      "score": 13,
+      "maxScore": 25,
+      "percentage": 52,
+      "level": "Помірний ресурс",
+      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
+      "recommendation": "Додай регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
+      "createdAt": "2026-04-02T08:52:00.467Z"
+    },
+    {
+      "id": "res-1775124850376-0eqtdz",
+      "testId": "tst-1775124553826-tlr376",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-1775124553826-0ttpni-0",
+          "value": 1
+        },
+        {
+          "questionId": "q-1775124553826-7j3cuk-1",
+          "value": 1
+        },
+        {
+          "questionId": "q-1775124553826-69qisd-2",
+          "value": 1
+        }
+      ],
+      "score": null,
+      "maxScore": null,
+      "percentage": null,
+      "level": "Очікує оцінювання",
+      "summary": "Авторський тест очікує перевірки викладачем.",
+      "recommendation": "Після перегляду відповідей викладач надасть висновок.",
+      "reviewStatus": "pending",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-04-02T10:14:10.376Z"
+    },
+    {
+      "id": "res-1775125296130-top5q2",
+      "testId": "tst-1775124564273-snlyzv",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-1775124564273-rm8hcj-0",
+          "value": 5
+        },
+        {
+          "questionId": "q-1775124564273-llgzd4-1",
+          "value": 5
+        },
+        {
+          "questionId": "q-1775124564273-0bukzu-2",
+          "value": 5
+        }
+      ],
+      "score": 15,
+      "maxScore": 15,
+      "percentage": 100,
+      "level": "Високий ресурс",
+      "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
+      "recommendation": "Зберігайте поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-04-02T10:21:36.130Z"
+    },
+    {
+      "id": "res-1775125318757-ypf9kl",
+      "testId": "test-resource-default",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-er-1",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-2",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-3",
+          "value": 3
+        },
+        {
+          "questionId": "q-er-4",
+          "value": 5
+        },
+        {
+          "questionId": "q-er-5",
+          "value": 2
+        }
+      ],
+      "score": 20,
+      "maxScore": 25,
+      "percentage": 80,
+      "level": "Високий ресурс",
+      "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
+      "recommendation": "Зберігайте поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-04-02T10:21:58.757Z"
+    },
+    {
+      "id": "res-1775125327335-dkcsp3",
+      "testId": "tst-1775125019989-dn6bas",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-1775125019989-jswyzh-0",
+          "value": 3
+        },
+        {
+          "questionId": "q-1775125019989-m5ta79-1",
+          "value": 1
+        },
+        {
+          "questionId": "q-1775125019989-baikv7-2",
+          "value": 1
+        }
+      ],
+      "score": null,
+      "maxScore": null,
+      "percentage": null,
+      "level": "Помірний ресурс",
+      "summary": "123",
+      "recommendation": "123",
+      "reviewStatus": "reviewed",
+      "teacherReview": "123",
+      "teacherRecommendation": "123",
+      "reviewedAt": "2026-04-02T10:22:55.157Z",
+      "reviewedBy": "usr-1775119862270-moc7tc",
+      "createdAt": "2026-04-02T10:22:07.335Z"
+    }
+  ]
+}

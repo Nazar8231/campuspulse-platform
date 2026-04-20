@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusPulse — Кабінет</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="dashboard-page">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+
+  <div class="dashboard-shell">
+    <aside class="sidebar surface reveal">
+      <a class="brand brand-dashboard" href="/">
+        <span class="brand-logo brand-logo-image-wrap">
+  <img src="/images/college-logo.jpg" alt="Емблема коледжу" class="brand-logo-image" />
+</span>
+        <span>
+          <strong>CampusPulse</strong>
+          <small id="sidebar-role">Кабінет</small>
+        </span>
+      </a>
+
+      <div class="user-brief surface soft-card">
+        <span class="muted">Активний профіль</span>
+        <strong id="profile-name">—</strong>
+        <small id="profile-meta">—</small>
+      </div>
+
+      <nav id="sidebar-nav" class="sidebar-nav"></nav>
+
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn ghost full">Вийти</button>
+      </div>
+    </aside>
+
+    <main class="workspace reveal-delay">
+      <header class="workspace-top surface">
+        <div>
+          <span id="page-eyebrow" class="eyebrow">Робочий кабінет</span>
+          <h1 id="page-title">Завантаження...</h1>
+          <p id="page-subtitle" class="workspace-subtitle">Підготовка даних...</p>
+        </div>
+        <div class="workspace-meta">
+          <span id="role-pill" class="pill neutral">—</span>
+          <span id="clock-pill" class="pill">—</span>
+        </div>
+      </header>
+
+      <section id="workspace-content" class="workspace-content"></section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <div id="modal-root" class="modal-root hidden"></div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
