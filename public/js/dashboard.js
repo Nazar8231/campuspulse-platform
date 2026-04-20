@@ -984,7 +984,7 @@ function renderUsersTab() {
   : `
     <div class="inline-actions" style="gap: 8px;">
       <button class="btn primary" data-action="save-user" data-user-id="${user.id}">Зберегти</button>
-      <button class="btn danger" data-action="delete-user" data-user-id="${user.id}">🗑️ Видалити</button>
+      <button class="btn danger" data-action="delete-user" data-user-id="${user.id}">Видалити</button>
     </div>
   `}
                   </td>
