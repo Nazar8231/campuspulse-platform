@@ -160,7 +160,7 @@ function renderEmpty(title, description) {
 
 function renderTimelineBars(timeline) {
   if (!timeline || !timeline.length) {
-    return renderEmpty('Ще немає часової динаміки', 'Додай кілька записів самопочуття, щоб побачити зміни по днях.');
+    return renderEmpty('Ще немає часової динаміки', 'Додайте кілька записів самопочуття, щоб побачити зміни по днях.');
   }
 
   return `
