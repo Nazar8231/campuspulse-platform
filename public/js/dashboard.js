@@ -857,7 +857,7 @@ function renderTeacherResults() {
 
 function renderWellbeingAnalytics() {
   const overview = state.overview;
-  if (!overview) return renderEmpty('Немає аналітики', 'Спробуй оновити сторінку.');
+  if (!overview) return renderEmpty('Немає аналітики', 'Спробуйте оновити сторінку.');
 
   return `
     <div class="workspace-grid">
@@ -1141,7 +1141,7 @@ function renderActiveTab() {
   renderSidebar();
   renderHeader();
   const template = getTabTemplate();
-  workspaceContent.innerHTML = template ? template() : renderEmpty('Розділ ще не готовий', 'Спробуй вибрати іншу вкладку.');
+  workspaceContent.innerHTML = template ? template() : renderEmpty('Розділ ще не готовий', 'Спробуйте вибрати іншу вкладку.');
   bindRangeOutputs();
   bindBuilderModeToggle();
 }
@@ -1482,6 +1482,9 @@ workspaceContent.addEventListener('click', async (event) => {
       const test = getTestById(trigger.dataset.testId);
       if (test) openModal(buildTestModal(test));
     }
+    if (action === 'delete-user') {
+  await handleDeleteUser(trigger.dataset.userId);
+}
     if (action === 'delete-checkin') {
       await handleDeleteCheckin(trigger.dataset.checkinId);
     }
@@ -1491,9 +1494,6 @@ workspaceContent.addEventListener('click', async (event) => {
     if (action === 'save-user') {
       await handleSaveUser(trigger.dataset.userId);
     }
-    if (action === 'delete-user') {
-  await handleDeleteUser(trigger.dataset.userId);
-}
     if (action === 'reset-results-filter') {
       state.filters.resultsQuery = '';
       renderActiveTab();
@@ -1641,3 +1641,4 @@ async function init() {
 }
 
 init();
+
