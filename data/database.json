@@ -2,7 +2,7 @@
   "meta": {
     "version": 2,
     "title": "CampusPulse",
-    "updatedAt": "2026-04-19T06:38:29.211Z"
+    "updatedAt": "2026-05-26T10:17:21.875Z"
   },
   "users": [
     {
@@ -16,7 +16,7 @@
       "role": "admin",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.358Z",
-      "lastLoginAt": "2026-04-02T08:52:28.007Z"
+      "lastLoginAt": "2026-05-26T10:16:33.415Z"
     },
     {
       "id": "usr-teacher-default",
@@ -29,7 +29,7 @@
       "role": "teacher",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.389Z",
-      "lastLoginAt": "2026-04-02T08:08:19.845Z"
+      "lastLoginAt": "2026-04-20T10:20:23.600Z"
     },
     {
       "id": "usr-student-default",
@@ -43,32 +43,6 @@
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.420Z",
       "lastLoginAt": "2026-04-19T06:38:28.530Z"
-    },
-    {
-      "id": "usr-1774004495036-ltjr24",
-      "fullName": "цйув йв йцв",
-      "email": "zavalniuk2007@gmail.com",
-      "salt": "7852c9ef17b45261fc53e0d443d2c45d",
-      "passwordHash": "55a0e20caf7ac2c9152854c56c6afb61545bf313ebc6b202dc791390da05ef09fcf5ea4e3b0fe2950604e77cb6cdb6bb44d7659066a78e45bc007985b5fb6da3",
-      "faculty": "фцуфц",
-      "studyYear": "фівфів",
-      "role": "teacher",
-      "status": "active",
-      "createdAt": "2026-03-20T11:01:35.036Z",
-      "lastLoginAt": null
-    },
-    {
-      "id": "usr-1775116257242-x82m5w",
-      "fullName": "Назар Завальнюк",
-      "email": "123456@campuspulse.local",
-      "salt": "cbade181357e646b2a15584a6a9fc2d9",
-      "passwordHash": "803ccbfd2ad6600186701e15c2e911a116f6f785830508364560fc66041f54187108fb2f475fbef67c9d8becfbe129ce3960df8414c884904320cb7aa5c7d1ed",
-      "faculty": "йцйуцйуц",
-      "studyYear": "цйцуйцу",
-      "role": "teacher",
-      "status": "active",
-      "createdAt": "2026-04-02T07:50:57.242Z",
-      "lastLoginAt": null
     },
     {
       "id": "usr-1775119862270-moc7tc",
