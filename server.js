@@ -18,7 +18,8 @@ const DEFAULT_ACCOUNTS = [
     password: 'Admin123!',
     faculty: 'Центральне адміністрування',
     studyYear: 'Адміністратор',
-    role: 'admin'
+    role: 'admin',
+    group: null  
   },
   {
     id: 'usr-teacher-default',
@@ -27,7 +28,8 @@ const DEFAULT_ACCOUNTS = [
     password: 'Teacher123!',
     faculty: 'Кафедра психології та педагогіки',
     studyYear: 'Викладач',
-    role: 'teacher'
+    role: 'teacher',
+    group: null  
   },
   {
     id: 'usr-student-default',
@@ -36,7 +38,8 @@ const DEFAULT_ACCOUNTS = [
     password: 'Student123!',
     faculty: 'Компʼютерні науки',
     studyYear: '3 курс',
-    role: 'student'
+    role: 'student',
+    group: 'ІТі-41'  
   }
 ];
 
@@ -152,6 +155,7 @@ function normalizeUser(rawUser) {
     passwordHash: rawUser.passwordHash,
     faculty: String(rawUser.faculty || '—').trim(),
     studyYear: String(rawUser.studyYear || '—').trim(),
+    group: rawUser.group || null,  // <-- ДОДАТИ ЦЕЙ РЯДОК
     role: ['student', 'teacher', 'admin'].includes(rawUser.role) ? rawUser.role : 'student',
     status: rawUser.status === 'inactive' ? 'inactive' : 'active',
     createdAt: rawUser.createdAt || new Date().toISOString(),
@@ -544,6 +548,7 @@ function joinResult(result, db) {
     ...result,
     studentName: user ? user.fullName : 'Невідомий користувач',
     studentEmail: user ? user.email : '',
+    group: user ? user.group : null,  // <-- ДОДАТИ ЦЕЙ РЯДОК
     faculty: user ? user.faculty : '—',
     studyYear: user ? user.studyYear : '—',
     testTitle: test ? test.title : 'Тест видалено',
@@ -571,6 +576,7 @@ function buildTeacherOverview(db) {
         .slice(-1)[0] || student.createdAt;
       return {
         ...sanitizeUser(student),
+        group: student.group,
         entries: stats.totalEntries,
         resultsCount: userResults.length,
         wellbeingIndex: stats.wellbeingIndex,
@@ -686,7 +692,7 @@ app.get('/dashboard', (_, res) => res.sendFile(path.join(ROOT, 'public', 'dashbo
 app.get('/api/health', (_, res) => res.json({ status: 'ok', title: 'CampusPulse' }));
 
 app.post('/api/register', (req, res) => {
-  const { fullName, email, password, faculty, studyYear, role } = req.body;
+  const { fullName, email, password, faculty, studyYear, role, group } = req.body;  // <-- ДОДАТИ group
 
   if (!fullName || !email || !password || !faculty || !studyYear) {
     return res.status(400).json({ message: 'Заповни всі обовʼязкові поля.' });
@@ -712,6 +718,7 @@ app.post('/api/register', (req, res) => {
     passwordHash,
     faculty,
     studyYear,
+    group: group || null,  // <-- ДОДАТИ ЦЕЙ РЯДОК
     role: safeRole,
     status: 'active',
     createdAt: new Date().toISOString()
@@ -997,11 +1004,21 @@ app.get('/api/results/my', requireAuth, requireRole('student'), (req, res) => {
 });
 
 app.get('/api/results/all', requireAuth, requireRole('teacher', 'admin'), (req, res) => {
-  const results = req.database.testResults
-    .slice()
+  const { group } = req.query;
+  let results = req.database.testResults.slice();
+  let users = req.database.users;
+  
+  // Фільтрація за групою (якщо параметр передано)
+  if (group && group !== '') {
+    const studentIds = users.filter(u => u.group === group && u.role === 'student').map(u => u.id);
+    results = results.filter(r => studentIds.includes(r.userId));
+  }
+  
+  const joinedResults = results
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .map((result) => joinResult(result, req.database));
-  res.json({ results });
+    
+  res.json({ results: joinedResults });
 });
 app.patch('/api/results/:id/review', requireAuth, requireRole('teacher', 'admin'), (req, res) => {
   const result = req.database.testResults.find((item) => item.id === req.params.id);
@@ -1117,7 +1134,14 @@ app.delete('/api/admin/users/:id', requireAuth, requireRole('admin'), (req, res)
 app.get('/api/admin/system', requireAuth, requireRole('admin'), (req, res) => {
   res.json(buildAdminSystem(req.database));
 });
-
+app.get('/api/groups', requireAuth, requireRole('teacher', 'admin'), (req, res) => {
+  const groups = [...new Set(req.database.users
+    .filter(user => user.role === 'student' && user.group)
+    .map(user => user.group)
+  )].sort();
+  
+  res.json({ groups });
+});
 app.listen(PORT, () => {
   console.log(`CampusPulse is running on http://localhost:${PORT}`);
 });
