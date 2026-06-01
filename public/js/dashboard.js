@@ -29,7 +29,8 @@ const state = {
   users: [],
   system: null,
   filters: {
-    resultsQuery: ''
+    resultsQuery: '',
+    group: ''
   }
 };
 
@@ -824,31 +825,58 @@ function renderResultsTable(results) {
 }
 
 function getFilteredResults() {
+  let results = [...state.allResults];
+  
+  // Фільтрація за групою
+  if (state.filters.group && state.filters.group !== '') {
+    results = results.filter(result => result.group === state.filters.group);
+  }
+  
+  // Фільтрація за пошуком
   const query = state.filters.resultsQuery.trim().toLowerCase();
-  if (!query) return state.allResults;
-  return state.allResults.filter((result) =>
-    [result.studentName, result.studentEmail, result.testTitle, result.category, result.level]
-      .join(' ')
-      .toLowerCase()
-      .includes(query)
-  );
+  if (query) {
+    results = results.filter(result =>
+      (result.studentName || '').toLowerCase().includes(query) ||
+      (result.testTitle || '').toLowerCase().includes(query) ||
+      (result.level || '').toLowerCase().includes(query)
+    );
+  }
+  
+  return results;
 }
 
 function renderTeacherResults() {
+  const groups = [...new Set(state.allResults
+    .filter(result => result.group)
+    .map(result => result.group)
+  )].sort();
+  
+  const groupFilterHtml = `
+    <div class="filter-row" style="flex-wrap: wrap;">
+      <label style="min-width: 200px;">
+        <span>Група</span>
+        <select id="group-filter" data-filter="group">
+          <option value="">Всі групи</option>
+          ${groups.map(group => `<option value="${escapeHtml(group)}" ${state.filters.group === group ? 'selected' : ''}>${escapeHtml(group)}</option>`).join('')}
+        </select>
+      </label>
+      <label style="flex:1 1 320px;">
+        <span>Пошук</span>
+        <input type="text" id="search-filter" data-filter="search" value="${escapeHtml(state.filters.resultsQuery)}" placeholder="Пошук за студентом, тестом або рівнем" />
+      </label>
+      <div class="inline-actions">
+        <button class="btn primary" data-action="apply-filters">Застосувати</button>
+        <button class="btn ghost" data-action="reset-filters">Скинути</button>
+      </div>
+    </div>
+  `;
+  
   const filteredResults = getFilteredResults();
+  
   return `
     <div class="workspace-content-stack">
       <div class="section-card surface">
-        <form id="results-filter-form" class="filter-row">
-          <label style="flex:1 1 320px;">
-            <span>Фільтр</span>
-            <input type="text" name="query" value="${escapeHtml(state.filters.resultsQuery)}" placeholder="Пошук за студентом, тестом або рівнем" />
-          </label>
-          <div class="inline-actions">
-            <button class="btn primary" type="submit">Застосувати</button>
-            <button class="btn ghost" type="button" data-action="reset-results-filter">Скинути</button>
-          </div>
-        </form>
+        ${groupFilterHtml}
       </div>
       ${renderResultsTable(filteredResults)}
     </div>
@@ -1475,16 +1503,16 @@ workspaceContent.addEventListener('click', async (event) => {
       renderActiveTab();
     }
     if (action === 'review-result') {
-  const result = getResultById(trigger.dataset.resultId);
-  if (result) openModal(buildReviewModal(result));
-}
+      const result = getResultById(trigger.dataset.resultId);
+      if (result) openModal(buildReviewModal(result));
+    }
     if (action === 'open-test') {
       const test = getTestById(trigger.dataset.testId);
       if (test) openModal(buildTestModal(test));
     }
     if (action === 'delete-user') {
-  await handleDeleteUser(trigger.dataset.userId);
-}
+      await handleDeleteUser(trigger.dataset.userId);
+    }
     if (action === 'delete-checkin') {
       await handleDeleteCheckin(trigger.dataset.checkinId);
     }
@@ -1496,6 +1524,20 @@ workspaceContent.addEventListener('click', async (event) => {
     }
     if (action === 'reset-results-filter') {
       state.filters.resultsQuery = '';
+      state.filters.group = '';
+      renderActiveTab();
+    }
+    // НОВІ ОБРОБНИКИ ДЛЯ ФІЛЬТРІВ
+    if (action === 'apply-filters') {
+      const groupSelect = document.getElementById('group-filter');
+      const searchInput = document.getElementById('search-filter');
+      if (groupSelect) state.filters.group = groupSelect.value;
+      if (searchInput) state.filters.resultsQuery = searchInput.value;
+      renderActiveTab();
+    }
+    if (action === 'reset-filters') {
+      state.filters.resultsQuery = '';
+      state.filters.group = '';
       renderActiveTab();
     }
   } catch (error) {
@@ -1590,7 +1632,19 @@ workspaceContent.addEventListener('submit', async (event) => {
     showToast(error.message, 'error');
   }
 });
-
+// Обробник для пошуку при натисканні Enter
+workspaceContent.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    const searchInput = document.getElementById('search-filter');
+    if (searchInput && document.activeElement === searchInput) {
+      event.preventDefault();
+      const groupSelect = document.getElementById('group-filter');
+      if (groupSelect) state.filters.group = groupSelect.value;
+      state.filters.resultsQuery = searchInput.value;
+      renderActiveTab();
+    }
+  }
+});
 workspaceContent.addEventListener('input', (event) => {
   const target = event.target;
   if (target.matches('[data-range-input]')) {
@@ -1641,4 +1695,5 @@ async function init() {
 }
 
 init();
+
 
