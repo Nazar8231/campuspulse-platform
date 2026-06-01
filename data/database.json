@@ -2,7 +2,7 @@
   "meta": {
     "version": 2,
     "title": "CampusPulse",
-    "updatedAt": "2026-05-26T10:17:21.875Z"
+    "updatedAt": "2026-06-01T07:01:44.752Z"
   },
   "users": [
     {
@@ -16,7 +16,7 @@
       "role": "admin",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.358Z",
-      "lastLoginAt": "2026-05-26T10:16:33.415Z"
+      "lastLoginAt": "2026-06-01T06:50:36.110Z"
     },
     {
       "id": "usr-teacher-default",
@@ -42,7 +42,7 @@
       "role": "student",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.420Z",
-      "lastLoginAt": "2026-04-19T06:38:28.530Z"
+      "lastLoginAt": "2026-06-01T06:56:18.501Z"
     },
     {
       "id": "usr-1775119862270-moc7tc",
@@ -285,172 +285,301 @@
       "createdAt": "2026-03-16T09:30:00.000Z"
     },
     {
-      "id": "tst-1775124553826-tlr376",
-      "title": "1",
-      "description": "1",
+      "id": "test-flourishing-scale",
+      "title": "Шкала процвітання (Flourishing Scale)",
+      "description": "Опитувальник для оцінки психосоціального благополуччя, особистісного ресурсу та загального відчуття процвітання. Розроблений Е. Дінером (2010), українська адаптація Юхименко-Лескроарт та Воєділової (2024).",
       "category": "Ресурс",
       "mode": "resource",
-      "durationMinutes": 5,
+      "durationMinutes": 7,
       "status": "active",
-      "createdBy": "usr-1775119862270-moc7tc",
-      "createdByName": "Завальнюк Назар",
-      "answerType": "custom",
-      "questions": [
-        {
-          "id": "q-1775124553826-0ttpni-0",
-          "text": "Який твій настрій сьогодні?",
-          "options": [
-            {
-              "text": "Добрий",
-              "value": 1
-            },
-            {
-              "text": "Нормальний",
-              "value": 2
-            },
-            {
-              "text": "Поганий",
-              "value": 3
-            }
-          ]
-        },
-        {
-          "id": "q-1775124553826-7j3cuk-1",
-          "text": "Як ти оцінюєш навантаження?",
-          "options": [
-            {
-              "text": "Легке",
-              "value": 1
-            },
-            {
-              "text": "Помірне",
-              "value": 2
-            },
-            {
-              "text": "Високе",
-              "value": 3
-            }
-          ]
-        },
-        {
-          "id": "q-1775124553826-69qisd-2",
-          "text": "Чи вистачає тобі часу на відпочинок?",
-          "options": [
-            {
-              "text": "Так",
-              "value": 1
-            },
-            {
-              "text": "Частково",
-              "value": 2
-            },
-            {
-              "text": "Ні",
-              "value": 3
-            }
-          ]
-        }
-      ],
-      "createdAt": "2026-04-02T10:09:13.826Z"
-    },
-    {
-      "id": "tst-1775124564273-snlyzv",
-      "title": "2",
-      "description": "2",
-      "category": "Ресурс",
-      "mode": "resource",
-      "durationMinutes": 5,
-      "status": "active",
-      "createdBy": "usr-1775119862270-moc7tc",
-      "createdByName": "Завальнюк Назар",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
       "answerType": "scale",
+      "scaleMin": 1,
+      "scaleMax": 7,
+      "scaleLabels": {
+        "1": "Абсолютно не згоден",
+        "2": "Не згоден",
+        "3": "Скоріше не згоден",
+        "4": "Невизначено",
+        "5": "Скоріше згоден",
+        "6": "Згоден",
+        "7": "Абсолютно згоден"
+      },
       "questions": [
         {
-          "id": "q-1775124564273-rm8hcj-0",
-          "text": "qwe",
-          "options": []
+          "id": "q-fs-1",
+          "text": "Я веду цілеспрямоване, повне сенсу життя."
         },
         {
-          "id": "q-1775124564273-llgzd4-1",
-          "text": "qwe",
-          "options": []
+          "id": "q-fs-2",
+          "text": "Я вдячний людям за підтримку."
         },
         {
-          "id": "q-1775124564273-0bukzu-2",
-          "text": "qwe",
-          "options": []
+          "id": "q-fs-3",
+          "text": "Я поглинений своїми повсякденними справами і відчуваю до них інтерес."
+        },
+        {
+          "id": "q-fs-4",
+          "text": "Я всіма силами сприяю щастю і благополуччю інших людей."
+        },
+        {
+          "id": "q-fs-5",
+          "text": "Я компетентний у тих видах діяльності, які для мене важливі, і здатний їх виконувати."
+        },
+        {
+          "id": "q-fs-6",
+          "text": "Я хороша людина і у мене хороше життя."
+        },
+        {
+          "id": "q-fs-7",
+          "text": "Я з оптимізмом дивлюся в майбутнє."
+        },
+        {
+          "id": "q-fs-8",
+          "text": "Люди поважають мене."
         }
       ],
-      "createdAt": "2026-04-02T10:09:24.273Z"
+      "createdAt": "2026-03-16T08:00:00.000Z"
     },
     {
-      "id": "tst-1775125019989-dn6bas",
-      "title": "123",
-      "description": "123",
+      "id": "test-rosenberg-self-esteem",
+      "title": "Шкала самооцінки Розенберга",
+      "description": "Класичний опитувальник для вимірювання глобальної самооцінки. Розроблений М. Розенбергом (1965), українська адаптація Вельдбрехт, Зінченко, Тавровецька (2025).",
+      "category": "Ресурс",
+      "mode": "resource",
+      "durationMinutes": 6,
+      "status": "active",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "answerType": "scale",
+      "scaleMin": 0,
+      "scaleMax": 3,
+      "scaleLabels": {
+        "0": "Абсолютно не згоден",
+        "1": "Не згоден",
+        "2": "Згоден",
+        "3": "Повністю згоден"
+      },
+      "reverseScored": [
+        2,
+        5,
+        6,
+        8,
+        9
+      ],
+      "questions": [
+        {
+          "id": "q-rse-1",
+          "text": "Загалом, я задоволений собою.",
+          "reverse": false
+        },
+        {
+          "id": "q-rse-2",
+          "text": "Час від часу я думаю, що я ні на що не здатний.",
+          "reverse": true
+        },
+        {
+          "id": "q-rse-3",
+          "text": "Я відчуває, що у мене є багато хороших якостей.",
+          "reverse": false
+        },
+        {
+          "id": "q-rse-4",
+          "text": "Я можу робити різні речі, як і більшість інших людей.",
+          "reverse": false
+        },
+        {
+          "id": "q-rse-5",
+          "text": "Я відчуваю, що особливо не маю чим пишатися.",
+          "reverse": true
+        },
+        {
+          "id": "q-rse-6",
+          "text": "Іноді я почуваюсь ні на що не здатним.",
+          "reverse": true
+        },
+        {
+          "id": "q-rse-7",
+          "text": "Я відчуваю, що я цінний, принаймні на рівні з іншими.",
+          "reverse": false
+        },
+        {
+          "id": "q-rse-8",
+          "text": "Я хотів би мати більше поваги до себе.",
+          "reverse": true
+        },
+        {
+          "id": "q-rse-9",
+          "text": "Загалом, я схильний думати, що я невдаха.",
+          "reverse": true
+        },
+        {
+          "id": "q-rse-10",
+          "text": "Я позитивно ставлюсь до себе.",
+          "reverse": false
+        }
+      ],
+      "createdAt": "2026-03-16T09:30:00.000Z"
+    },
+    {
+      "id": "test-phq9",
+      "title": "PHQ-9 (Опитувальник здоров'я пацієнта)",
+      "description": "Стандартизований скринінговий опитувальник для виявлення депресивних станів. Розроблений Kroenke та Spitzer (2001). Оцінює частоту симптомів за останні 2 тижні.",
+      "category": "Навантаження",
+      "mode": "risk",
+      "durationMinutes": 7,
+      "status": "active",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "answerType": "scale",
+      "scaleMin": 0,
+      "scaleMax": 3,
+      "scaleLabels": {
+        "0": "Зовсім ні",
+        "1": "Кілька днів",
+        "2": "Більше ніж половину днів",
+        "3": "Майже щодня"
+      },
+      "questions": [
+        {
+          "id": "q-phq-1",
+          "text": "У вас був знижений інтерес або задоволення від виконання буденних справ?"
+        },
+        {
+          "id": "q-phq-2",
+          "text": "У вас був поганий настрій, ви були пригнічені або відчували безвихідь?"
+        },
+        {
+          "id": "q-phq-3",
+          "text": "У вас були проблеми зі сном (труднощі засинання, поверхневий сон або надмірна сонливість)?"
+        },
+        {
+          "id": "q-phq-4",
+          "text": "Ви відчували втому або брак сил?"
+        },
+        {
+          "id": "q-phq-5",
+          "text": "У вас був поганий апетит або переїдання?"
+        },
+        {
+          "id": "q-phq-6",
+          "text": "Ви мали низьку думку про себе (відчували себе невдахою або були розчаровані в собі)?"
+        },
+        {
+          "id": "q-phq-7",
+          "text": "Вам було важко зосередитися на буденних справах (читанні, перегляді телевізора)?"
+        },
+        {
+          "id": "q-phq-8",
+          "text": "Ваші рухи або мовлення були настільки уповільненими, що це помічали інші, або навпаки – ви були неспокійними або метушливими?"
+        },
+        {
+          "id": "q-phq-9",
+          "text": "Чи з'являлися у вас думки про краще не жити або про самоушкодження?"
+        }
+      ],
+      "createdAt": "2026-03-16T10:00:00.000Z"
+    },
+    {
+      "id": "test-academic-stress",
+      "title": "Шкала академічного стресу",
+      "description": "Оцінка рівня стресу, пов'язаного з навчальним процесом, екзаменами, дедлайнами та навантаженням.",
+      "category": "Навантаження",
+      "mode": "risk",
+      "durationMinutes": 5,
+      "status": "active",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "answerType": "scale",
+      "scaleMin": 1,
+      "scaleMax": 5,
+      "scaleLabels": {
+        "1": "Ніколи",
+        "2": "Рідко",
+        "3": "Іноді",
+        "4": "Часто",
+        "5": "Завжди"
+      },
+      "questions": [
+        {
+          "id": "q-as-1",
+          "text": "Я відчуваю тиск через великий обсяг навчальних завдань."
+        },
+        {
+          "id": "q-as-2",
+          "text": "Перед іспитами або важливими здачами я відчуваю сильне напруження."
+        },
+        {
+          "id": "q-as-3",
+          "text": "Мені важко встигати виконувати всі завдання вчасно."
+        },
+        {
+          "id": "q-as-4",
+          "text": "Через навчання я відчуваю, що не маю часу на відпочинок або хобі."
+        },
+        {
+          "id": "q-as-5",
+          "text": "Я переживаю через оцінки та академічну успішність."
+        },
+        {
+          "id": "q-as-6",
+          "text": "Конкуренція з іншими студентами викликає у мене стрес."
+        },
+        {
+          "id": "q-as-7",
+          "text": "Мені важко знайти баланс між навчанням та особистим життям."
+        }
+      ],
+      "createdAt": "2026-03-16T11:00:00.000Z"
+    },
+    {
+      "id": "test-sleep-quality",
+      "title": "Оцінка якості сну",
+      "description": "Опитувальник для визначення порушень сну та їх впливу на денну активність і самопочуття.",
       "category": "Ресурс",
       "mode": "resource",
       "durationMinutes": 5,
       "status": "active",
-      "createdBy": "usr-1775119862270-moc7tc",
-      "createdByName": "Завальнюк Назар",
-      "answerType": "custom",
+      "createdBy": "usr-teacher-default",
+      "createdByName": "Марія Коваль",
+      "answerType": "scale",
+      "scaleMin": 1,
+      "scaleMax": 5,
+      "scaleLabels": {
+        "1": "Ніколи",
+        "2": "Рідко",
+        "3": "Іноді",
+        "4": "Часто",
+        "5": "Завжди"
+      },
       "questions": [
         {
-          "id": "q-1775125019989-jswyzh-0",
-          "text": "Який твій настрій сьогодні?",
-          "options": [
-            {
-              "text": "Добрий",
-              "value": 1
-            },
-            {
-              "text": "Нормальний",
-              "value": 2
-            },
-            {
-              "text": "Поганий",
-              "value": 3
-            }
-          ]
+          "id": "q-sq-1",
+          "text": "Я маю труднощі із засинанням ввечері."
         },
         {
-          "id": "q-1775125019989-m5ta79-1",
-          "text": "Як ти оцінюєш навантаження?",
-          "options": [
-            {
-              "text": "Легке",
-              "value": 1
-            },
-            {
-              "text": "Помірне",
-              "value": 2
-            },
-            {
-              "text": "Високе",
-              "value": 3
-            }
-          ]
+          "id": "q-sq-2",
+          "text": "Я прокидаюся вночі та не можу знову заснути."
         },
         {
-          "id": "q-1775125019989-baikv7-2",
-          "text": "Чи вистачає тобі часу на відпочинок?",
-          "options": [
-            {
-              "text": "Так",
-              "value": 1
-            },
-            {
-              "text": "Частково",
-              "value": 2
-            },
-            {
-              "text": "Ні",
-              "value": 3
-            }
-          ]
+          "id": "q-sq-3",
+          "text": "Я відчуваю втому одразу після пробудження."
+        },
+        {
+          "id": "q-sq-4",
+          "text": "Мені важко зосередитися вдень через нестачу сну."
+        },
+        {
+          "id": "q-sq-5",
+          "text": "Я сплю менше 6 годин на добу."
+        },
+        {
+          "id": "q-sq-6",
+          "text": "Я відчуваю сонливість під час занять."
         }
       ],
-      "createdAt": "2026-04-02T10:16:59.989Z"
+      "createdAt": "2026-03-16T11:30:00.000Z"
     }
   ],
   "testResults": [
@@ -795,68 +924,6 @@
       "createdAt": "2026-04-02T08:52:00.467Z"
     },
     {
-      "id": "res-1775124850376-0eqtdz",
-      "testId": "tst-1775124553826-tlr376",
-      "userId": "usr-student-default",
-      "answers": [
-        {
-          "questionId": "q-1775124553826-0ttpni-0",
-          "value": 1
-        },
-        {
-          "questionId": "q-1775124553826-7j3cuk-1",
-          "value": 1
-        },
-        {
-          "questionId": "q-1775124553826-69qisd-2",
-          "value": 1
-        }
-      ],
-      "score": null,
-      "maxScore": null,
-      "percentage": null,
-      "level": "Очікує оцінювання",
-      "summary": "Авторський тест очікує перевірки викладачем.",
-      "recommendation": "Після перегляду відповідей викладач надасть висновок.",
-      "reviewStatus": "pending",
-      "teacherReview": "",
-      "teacherRecommendation": "",
-      "reviewedAt": null,
-      "reviewedBy": null,
-      "createdAt": "2026-04-02T10:14:10.376Z"
-    },
-    {
-      "id": "res-1775125296130-top5q2",
-      "testId": "tst-1775124564273-snlyzv",
-      "userId": "usr-student-default",
-      "answers": [
-        {
-          "questionId": "q-1775124564273-rm8hcj-0",
-          "value": 5
-        },
-        {
-          "questionId": "q-1775124564273-llgzd4-1",
-          "value": 5
-        },
-        {
-          "questionId": "q-1775124564273-0bukzu-2",
-          "value": 5
-        }
-      ],
-      "score": 15,
-      "maxScore": 15,
-      "percentage": 100,
-      "level": "Високий ресурс",
-      "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
-      "recommendation": "Зберігайте поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
-      "reviewStatus": "auto",
-      "teacherReview": "",
-      "teacherRecommendation": "",
-      "reviewedAt": null,
-      "reviewedBy": null,
-      "createdAt": "2026-04-02T10:21:36.130Z"
-    },
-    {
       "id": "res-1775125318757-ypf9kl",
       "testId": "test-resource-default",
       "userId": "usr-student-default",
@@ -896,35 +963,259 @@
       "createdAt": "2026-04-02T10:21:58.757Z"
     },
     {
-      "id": "res-1775125327335-dkcsp3",
-      "testId": "tst-1775125019989-dn6bas",
+      "id": "res-1780297064083-udag88",
+      "testId": "test-flourishing-scale",
       "userId": "usr-student-default",
       "answers": [
         {
-          "questionId": "q-1775125019989-jswyzh-0",
+          "questionId": "q-fs-1",
           "value": 3
         },
         {
-          "questionId": "q-1775125019989-m5ta79-1",
+          "questionId": "q-fs-2",
+          "value": 4
+        },
+        {
+          "questionId": "q-fs-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-fs-4",
+          "value": 2
+        },
+        {
+          "questionId": "q-fs-5",
+          "value": 4
+        },
+        {
+          "questionId": "q-fs-6",
+          "value": 4
+        },
+        {
+          "questionId": "q-fs-7",
+          "value": 3
+        },
+        {
+          "questionId": "q-fs-8",
+          "value": 3
+        }
+      ],
+      "score": 25,
+      "maxScore": 40,
+      "percentage": 63,
+      "level": "Помірний ресурс",
+      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
+      "recommendation": "Додайте регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-06-01T06:57:44.083Z"
+    },
+    {
+      "id": "res-1780297133790-426uyt",
+      "testId": "test-rosenberg-self-esteem",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-rse-1",
+          "value": 4
+        },
+        {
+          "questionId": "q-rse-2",
+          "value": 3
+        },
+        {
+          "questionId": "q-rse-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-rse-4",
+          "value": 2
+        },
+        {
+          "questionId": "q-rse-5",
           "value": 1
         },
         {
-          "questionId": "q-1775125019989-baikv7-2",
+          "questionId": "q-rse-6",
+          "value": 1
+        },
+        {
+          "questionId": "q-rse-7",
+          "value": 1
+        },
+        {
+          "questionId": "q-rse-8",
+          "value": 1
+        },
+        {
+          "questionId": "q-rse-9",
+          "value": 2
+        },
+        {
+          "questionId": "q-rse-10",
+          "value": 2
+        }
+      ],
+      "score": 19,
+      "maxScore": 50,
+      "percentage": 38,
+      "level": "Низький ресурс",
+      "summary": "Є ознаки виснаження або недостатнього відновлення, що може впливати на навчальну ефективність.",
+      "recommendation": "Варто переглянути навантаження, режим сну та додати стабільні ритуали відновлення протягом тижня.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-06-01T06:58:53.790Z"
+    },
+    {
+      "id": "res-1780297175397-mbwsyt",
+      "testId": "test-phq9",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-phq-1",
+          "value": 3
+        },
+        {
+          "questionId": "q-phq-2",
+          "value": 3
+        },
+        {
+          "questionId": "q-phq-3",
+          "value": 5
+        },
+        {
+          "questionId": "q-phq-4",
+          "value": 3
+        },
+        {
+          "questionId": "q-phq-5",
+          "value": 1
+        },
+        {
+          "questionId": "q-phq-6",
+          "value": 3
+        },
+        {
+          "questionId": "q-phq-7",
+          "value": 4
+        },
+        {
+          "questionId": "q-phq-8",
+          "value": 2
+        },
+        {
+          "questionId": "q-phq-9",
           "value": 1
         }
       ],
-      "score": null,
-      "maxScore": null,
-      "percentage": null,
+      "score": 25,
+      "maxScore": 45,
+      "percentage": 56,
+      "level": "Помірний ризик",
+      "summary": "Є ознаки напруження, але ситуацію ще можна стабілізувати за рахунок ритму роботи та відпочинку.",
+      "recommendation": "Корисно скоротити фонове перевантаження, структурувати дедлайни та відстежити сон протягом найближчого тижня.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-06-01T06:59:35.397Z"
+    },
+    {
+      "id": "res-1780297223599-fgqdz9",
+      "testId": "test-academic-stress",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-as-1",
+          "value": 4
+        },
+        {
+          "questionId": "q-as-2",
+          "value": 5
+        },
+        {
+          "questionId": "q-as-3",
+          "value": 2
+        },
+        {
+          "questionId": "q-as-4",
+          "value": 3
+        },
+        {
+          "questionId": "q-as-5",
+          "value": 3
+        },
+        {
+          "questionId": "q-as-6",
+          "value": 3
+        },
+        {
+          "questionId": "q-as-7",
+          "value": 4
+        }
+      ],
+      "score": 24,
+      "maxScore": 35,
+      "percentage": 69,
+      "level": "Високий ризик",
+      "summary": "Тест показує виражені ознаки перевантаження та ризик виснаження.",
+      "recommendation": "Рекомендується переглянути навантаження, додати паузи та обговорити складні ділянки навчання з викладачем або куратором.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-06-01T07:00:23.599Z"
+    },
+    {
+      "id": "res-1780297279728-6n56xo",
+      "testId": "test-sleep-quality",
+      "userId": "usr-student-default",
+      "answers": [
+        {
+          "questionId": "q-sq-1",
+          "value": 5
+        },
+        {
+          "questionId": "q-sq-2",
+          "value": 1
+        },
+        {
+          "questionId": "q-sq-3",
+          "value": 4
+        },
+        {
+          "questionId": "q-sq-4",
+          "value": 2
+        },
+        {
+          "questionId": "q-sq-5",
+          "value": 1
+        },
+        {
+          "questionId": "q-sq-6",
+          "value": 2
+        }
+      ],
+      "score": 15,
+      "maxScore": 30,
+      "percentage": 50,
       "level": "Помірний ресурс",
-      "summary": "123",
-      "recommendation": "123",
-      "reviewStatus": "reviewed",
-      "teacherReview": "123",
-      "teacherRecommendation": "123",
-      "reviewedAt": "2026-04-02T10:22:55.157Z",
-      "reviewedBy": "usr-1775119862270-moc7tc",
-      "createdAt": "2026-04-02T10:22:07.335Z"
+      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
+      "recommendation": "Додайте регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
+      "reviewStatus": "auto",
+      "teacherReview": "",
+      "teacherRecommendation": "",
+      "reviewedAt": null,
+      "reviewedBy": null,
+      "createdAt": "2026-06-01T07:01:19.728Z"
     }
   ]
 }
