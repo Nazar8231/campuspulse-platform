@@ -72,36 +72,96 @@
       </div>
 
       <div id="register-card" class="auth-card">
-        <h2>Створення профілю</h2>
-        <form id="register-form" class="form-grid">
-          <label>
-            <span>ПІБ</span>
-            <input type="text" name="fullName" placeholder="Ім'я Прізвище" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="name@example.com" required />
-          </label>
-          <label>
-            <span>Пароль</span>
-            <input type="password" name="password" placeholder="Мінімум 6 символів" required />
-          </label>
-          <input type="hidden" id="role-field" name="role" value="student" />
+  <h2>Створення профілю</h2>
+  <form id="register-form" class="form-grid">
+    <label>
+      <span>ПІБ</span>
+      <input type="text" name="fullName" placeholder="Ім'я Прізвище" required />
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" placeholder="name@example.com" required />
+    </label>
+    <label>
+      <span>Пароль</span>
+      <input type="password" name="password" placeholder="Мінімум 6 символів" required />
+    </label>
+    <input type="hidden" id="role-field" name="role" value="student" />
 
-<div class="info-note">
-  Нові облікові записи створюються як студентські. Роль викладача надається адміністратором.
+    <div class="info-note">
+      Нові облікові записи створюються як студентські. Роль викладача надається адміністратором.
+    </div>
+
+    <label>
+      <span id="faculty-label">Факультет / спеціальність</span>
+      <input type="text" name="faculty" placeholder="Комп'ютерні науки" required />
+    </label>
+
+    <label>
+      <span id="studyyear-label">Курс</span>
+      <input type="text" name="studyYear" placeholder="3 курс" required />
+    </label>
+
+    <!-- НОВЕ ПОЛЕ: Група (тільки для студентів, необов'язкове) -->
+    <label>
+      <span>Група (тільки для студентів)</span>
+      <select name="group">
+        <option value="">Не обирати (для викладачів)</option>
+        <optgroup label="1 курс">
+          <option value="І-11 (СП-11, МТ-11, ІС-11)">І-11 (СП-11, МТ-11, ІС-11)</option>
+          <option value="ІТ-11">ІТ-11</option>
+          <option value="АТ-11">АТ-11</option>
+          <option value="АТ-12">АТ-12</option>
+          <option value="ЕМ-11">ЕМ-11</option>
+          <option value="ТБ-11">ТБ-11</option>
+          <option value="Ф-11">Ф-11</option>
+        </optgroup>
+        <optgroup label="2 курс">
+          <option value="ІСі-21">ІСі-21</option>
+          <option value="ІТі-21">ІТі-21</option>
+          <option value="ІТі-22">ІТі-22</option>
+          <option value="АТ-21">АТ-21</option>
+          <option value="АТ-22">АТ-22</option>
+          <option value="АТС-11">АТС-11</option>
+          <option value="ЕМ-21">ЕМ-21</option>
+          <option value="П-21">П-21</option>
+          <option value="ТБі-21">ТБі-21</option>
+          <option value="ТБС-21">ТБС-21</option>
+          <option value="ТТм-21">ТТм-21</option>
+          <option value="ТТСм-21">ТТСм-21</option>
+          <option value="ТТСм-22">ТТСм-22</option>
+          <option value="Фі-21">Фі-21</option>
+        </optgroup>
+        <optgroup label="3 курс">
+          <option value="І-31 (Е-31)">І-31 (Е-31)</option>
+          <option value="І-31 (ОП-31)">І-31 (ОП-31)</option>
+          <option value="І-31 (Ф-31)">І-31 (Ф-31)</option>
+          <option value="ІСі-31">ІСі-31</option>
+          <option value="ІТі-31">ІТі-31</option>
+          <option value="ІТі-32">ІТі-32</option>
+          <option value="АТі-31">АТі-31</option>
+          <option value="АТі-32">АТі-32</option>
+          <option value="АТС-21">АТС-21</option>
+          <option value="АТС-22">АТС-22</option>
+          <option value="ЕМ-31">ЕМ-31</option>
+          <option value="Пі-31">Пі-31</option>
+          <option value="ТБі-31">ТБі-31</option>
+          <option value="ТТмі-31">ТТмі-31</option>
+        </optgroup>
+        <optgroup label="4 курс">
+          <option value="ІТі-41">ІТі-41</option>
+          <option value="АТі-41">АТі-41</option>
+          <option value="ЕМ-41">ЕМ-41</option>
+          <option value="Пі-41">Пі-41</option>
+          <option value="ТБі-41">ТБі-41</option>
+        </optgroup>
+      </select>
+      <small>Оберіть групу, якщо ви студент. Викладачі залишають поле порожнім.</small>
+    </label>
+
+    <button class="btn primary large full" type="submit">Створити профіль</button>
+  </form>
 </div>
-          <label>
-            <span id="faculty-label">Факультет / спеціальність</span>
-            <input type="text" name="faculty" placeholder="Комп'ютерні науки" required />
-          </label>
-          <label>
-            <span id="studyyear-label">Курс</span>
-            <input type="text" name="studyYear" placeholder="3 курс" required />
-          </label>
-          <button class="btn primary large full" type="submit">Створити профіль</button>
-        </form>
-      </div>
     </section>
   </main>
 
