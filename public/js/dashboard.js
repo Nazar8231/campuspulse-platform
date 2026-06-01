@@ -570,7 +570,7 @@ function renderProfile(roleSpecificText, showStats = true) {
 
 function renderTeacherOverview() {
   const overview = state.overview;
-  if (!overview) return renderEmpty('Немає даних', 'Спробуй оновити сторінку.');
+  if (!overview) return renderEmpty('Немає даних', 'Спробуйте оновити сторінку.');
 
   return `
     <div class="workspace-grid">
@@ -1000,7 +1000,7 @@ function renderUsersTab() {
 
 function renderSystemTab() {
   const system = state.system;
-  if (!system) return renderEmpty('Немає системних даних', 'Спробуй оновити сторінку.');
+  if (!system) return renderEmpty('Немає системних даних', 'Спробуйте оновити сторінку.');
 
   return `
     <div class="workspace-grid">
