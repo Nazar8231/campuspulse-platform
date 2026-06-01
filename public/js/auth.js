@@ -104,11 +104,21 @@ loginForm?.addEventListener('submit', async (event) => {
 registerForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(registerForm);
+  
+  const payload = {
+    fullName: formData.get('fullName'),
+    email: formData.get('email'),
+    password: formData.get('password'),
+    role: formData.get('role') || 'student',
+    faculty: formData.get('faculty'),
+    studyYear: formData.get('studyYear'),
+    group: formData.get('group') || null  // група може бути порожньою
+  };
 
   try {
     await apiRequest('/api/register', {
       method: 'POST',
-      body: JSON.stringify(Object.fromEntries(formData.entries()))
+      body: JSON.stringify(payload)
     });
     showToast('Профіль створено. Відкриваємо кабінет…');
     setTimeout(() => {
@@ -120,3 +130,4 @@ registerForm?.addEventListener('submit', async (event) => {
 });
 
 redirectIfAuthorized();
+
