@@ -2,7 +2,7 @@
   "meta": {
     "version": 2,
     "title": "CampusPulse",
-    "updatedAt": "2026-06-01T07:01:44.752Z"
+    "updatedAt": "2026-06-01T09:34:22.662Z"
   },
   "users": [
     {
@@ -13,10 +13,11 @@
       "passwordHash": "58b9a7119570cb2c67bddb7a4c991446737c177e527af1916a79c8d2d4758e0d96c830a532c8dad6f505a495aea5751fbf4d9755b2e8d96c0383bd519e097557",
       "faculty": "Центральне адміністрування",
       "studyYear": "Адміністратор",
+      "group": null,
       "role": "admin",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.358Z",
-      "lastLoginAt": "2026-06-01T06:50:36.110Z"
+      "lastLoginAt": "2026-06-01T09:30:54.684Z"
     },
     {
       "id": "usr-teacher-default",
@@ -26,10 +27,11 @@
       "passwordHash": "13abdb818b07695d5e7e382d1aa930eefbe648c369c8e0ca306db0c357e0f5ac4d97ff171312003e2e105d92278e5afe8108558a1924f0214f9bb19023957952",
       "faculty": "Кафедра психології та педагогіки",
       "studyYear": "Викладач",
+      "group": null,
       "role": "teacher",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.389Z",
-      "lastLoginAt": "2026-04-20T10:20:23.600Z"
+      "lastLoginAt": "2026-06-01T08:59:52.362Z"
     },
     {
       "id": "usr-student-default",
@@ -39,23 +41,11 @@
       "passwordHash": "84b67c05d1877f6d0589682fb5cb34fd8cf9059ed2be23b2d4a21f5b06ff0dc3519a876d1845c821816fd27170603bcce437a9c361265919329c289e2205e300",
       "faculty": "Компʼютерні науки",
       "studyYear": "3 курс",
+      "group": "ІТі-41",
       "role": "student",
       "status": "active",
       "createdAt": "2026-03-18T08:35:55.420Z",
       "lastLoginAt": "2026-06-01T06:56:18.501Z"
-    },
-    {
-      "id": "usr-1775119862270-moc7tc",
-      "fullName": "Завальнюк Назар",
-      "email": "student1@campuspulse.local",
-      "salt": "2351e079dd020b143f24c3026491a7ca",
-      "passwordHash": "1b9325e717d00863972c61e9349bf0bc0891f46fbc7e0e6cb9aad152209f769217059684ae18049d16dfbe370adb8249ff9fe5d9c452243ffa4fc0914c8ca2e6",
-      "faculty": "122 Комп'ютерні науки",
-      "studyYear": "4",
-      "role": "teacher",
-      "status": "active",
-      "createdAt": "2026-04-02T08:51:02.270Z",
-      "lastLoginAt": "2026-04-02T10:22:36.367Z"
     }
   ],
   "checkins": [
@@ -148,32 +138,6 @@
       "tags": [],
       "date": "2026-04-02",
       "createdAt": "2026-04-02T08:50:33.652Z"
-    },
-    {
-      "id": "chk-1775119879028-pzx893",
-      "userId": "usr-1775119862270-moc7tc",
-      "mood": 10,
-      "stress": 3,
-      "energy": 8,
-      "sleepHours": 9,
-      "workload": 4,
-      "note": "",
-      "tags": [],
-      "date": "2026-04-02",
-      "createdAt": "2026-04-02T08:51:19.028Z"
-    },
-    {
-      "id": "chk-1775119899042-scqqt7",
-      "userId": "usr-1775119862270-moc7tc",
-      "mood": 9,
-      "stress": 3,
-      "energy": 3,
-      "sleepHours": 7,
-      "workload": 3,
-      "note": "",
-      "tags": [],
-      "date": "2026-04-02",
-      "createdAt": "2026-04-02T08:51:39.042Z"
     },
     {
       "id": "chk-1775125344819-0mdjtm",
@@ -888,40 +852,6 @@
       "summary": "Результат свідчить про добрий емоційний ресурс і стабільний внутрішній стан.",
       "recommendation": "Зберігай поточний ритм відновлення, щоби підтримувати якісний навчальний темп без виснаження.",
       "createdAt": "2026-04-02T08:28:09.164Z"
-    },
-    {
-      "id": "res-1775119920467-4z4nav",
-      "testId": "test-resource-default",
-      "userId": "usr-1775119862270-moc7tc",
-      "answers": [
-        {
-          "questionId": "q-er-1",
-          "value": 3
-        },
-        {
-          "questionId": "q-er-2",
-          "value": 3
-        },
-        {
-          "questionId": "q-er-3",
-          "value": 2
-        },
-        {
-          "questionId": "q-er-4",
-          "value": 1
-        },
-        {
-          "questionId": "q-er-5",
-          "value": 4
-        }
-      ],
-      "score": 13,
-      "maxScore": 25,
-      "percentage": 52,
-      "level": "Помірний ресурс",
-      "summary": "Ресурс достатній, але нестабільний: у напружені періоди може просідати концентрація та витривалість.",
-      "recommendation": "Додай регулярні паузи, контроль сну та точкове зниження навантаження в пікові дні.",
-      "createdAt": "2026-04-02T08:52:00.467Z"
     },
     {
       "id": "res-1775125318757-ypf9kl",
